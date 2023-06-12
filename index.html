@@ -15,14 +15,14 @@
             <div class="container-fluid d-flex flex-row">
                 <div class="row d-flex flex-column width-30">
 
-                    <div class="col gx-0">
-                        <ul class="list-group list-group-flush border bg-grey">
-                            <li class="list-group-item d-flex flex-between">
-                                <div class="d-flex flex-row img">
+                    <div class="gx-0">
+                        <ul class="list-group list-group-flush border">
+                            <li class="list-group-item d-flex flex-between p-0">
+                                <div class="d-flex flex-row img bg-grey p-3">
                                     <img src="./img/avatar_io.jpg" alt="me">
                                     <h5>Sofia</h5>
                                 </div>
-                                <div class="d-flex flex-row">
+                                <div class="d-flex flex-row bg-grey p-3">
                                     <button type="button" class="btn btn-link">
                                         <i class="fa-solid fa-circle-notch fa-lg"></i>
                                     </button>
@@ -35,8 +35,8 @@
                                 </div>
                             </li>
 
-                            <li class="list-group-item d-flex bg-blue">
-                                <div class="d-flex flex-row">
+                            <li class="list-group-item d-flex p-0">
+                                <div class="d-flex flex-row  bg-blue p-3">
                                     <span class="bell"><i class="fa-solid fa-bell-slash fa-xl"></i></span>
                                     <div class="d-flex flex-wrap">
                                         <span>Ricevi notifiche di nuovi messaggi</span>
@@ -50,32 +50,57 @@
                                     <span class="input-group-text">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </span>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
                                 </div>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="col gx-0">
+                    <div class="col gx-0 overflow">
                         <ul class="list-group list-group-flush border" v-for="(contact, index) in contacts">
                             <li class="list-group-item d-flex">
-                                <img :src="contact.avatar" alt="">
+                                <img class="avatar" :src="contact.avatar" alt="avatar">
                                 <h5>{{ contact.name }}</h5>
-                                <p></p>
+                                <pre>{{ contact.date }}</pre>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="row d-flex flex-column width-70">
-                    <div class="col">
+                    <div class="gx-5">
                         <ul class="list-group list-group-flush border">
-                            <li class="list-group-item">
-
+                            <li class="list-group-item d-flex flex-between p-0">
+                                <div class="d-flex flex-row avatar-img bg-grey">
+                                    <img src="./img/avatar_1.jpg" alt="Avatar">
+                                    <h5>Michele</h5>
+                                </div>
+                                <div class="d-flex flex-row bg-grey p-3">
+                                    <button type="button" class="btn btn-link">
+                                        <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-link">
+                                        <i class="fa-solid fa-paperclip fa-lg"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-link">
+                                        <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                                    </button>
+                                </div>
                             </li>
                         </ul>
                     </div>
-                    <div class="col"></div>
+
+                    <div class="col bg-image border">
+
+                    </div>
+
+                    <div class="border">
+                        <div class="input-group m-3">
+                            <span><i class="fa-solid fa-face-smile"></i></span>
+                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                            <span><i class="fa-solid fa-face-smile"></i></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
