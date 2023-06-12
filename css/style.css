@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.border{
+    border-radius: none;
+}
+
+.width-30{
+    width: 30%;
+}
+
+.width-70{
+    width: 70%;
+}
+
+.width-100{
+    width: 100%;
+}
+
+.color{
+    background-color: rgba(234,234,234,255);
+}
+
+.img img{
+    width: 12%;
+    border-radius: 50%;
+}
+
+.img h5{
+    align-self: center;
+    margin-left: 10px;
+}
+
+.overflow{
+    overflow-y: auto;
+}
+
+.bg-grey{
+    background-color: rgba(234,234,234,255);
+}
+
+.bg-blue{
+    background-color: rgb(51, 51, 201);
+}
+
+.bell{
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.bell i{
+    color: rgba(142,218,252,255);
+}
