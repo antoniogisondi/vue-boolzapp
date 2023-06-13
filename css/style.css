@@ -38,6 +38,7 @@
 
 .overflow{
     overflow-y: auto;
+    height: 100vh;
 }
 
 .bg-grey{
@@ -92,7 +93,7 @@ i{
 .send{
     width: 300px;
     max-width: 300px;
-    padding: 15px 15px;
+    padding: 10px 10px;
     background-color: #d5f9ba;
     border-radius: 10px;
     margin: 25px;
@@ -102,7 +103,19 @@ i{
     background-color: white;
     width: 300px;
     max-width: 300px;
-    padding: 15px 15px;
+    padding: 10px 10px;
     border-radius: 10px;
     margin: 25px;
+}
+
+.date{
+    font-size: 10px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    margin-bottom: 0;
+}
+
+.text{
+    margin-bottom: 0;
 }
