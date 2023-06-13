@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background: linear-gradient(180deg, #009688 15%, #D9DBD4 15%);
+}
+
 /* UTILITIES */
 
 .border{
@@ -64,24 +68,36 @@
 }
 
 .avatar{
-    width: 12%;
+    width: 18%;
     border-radius: 50%;
+}
+
+.list{
+    cursor: pointer;
+}
+
+.date-chat{
+    justify-self: end;
+    font-size: 10px;
+    color: rgba(128, 128, 128, 0.803);
+}
+
+.user{
+    margin-left: 15px;
+}
+
+.user p{
+    color: rgba(128, 128, 128, 0.803);
 }
 
 .avatar-img img{
-    width: 12%;
+    width: 15%;
     border-radius: 50%;
-}
-
-.avatar-img h5{
-    align-self: center;
-    margin-left: 10px;
 }
 
 .bg-image{
     background-image: url(../img/mine.jpg);
     overflow-y: auto;
-    background: linear-gradient();
 }
 
 .border-none{
@@ -121,3 +137,5 @@ i{
 .text{
     margin-bottom: 5px;
 }
+
+

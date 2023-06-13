@@ -6,6 +6,8 @@ createApp({
     data(){
         return{
             active_chat: 0,
+            text:'',
+            last_access: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -175,9 +177,35 @@ createApp({
     },
 
     methods:{
+        getDate(){
+            let date = luxon.DateTime;
+            let current_date = date.now().setLocale('it').toLocaleString(date.DATETIME_SHORT_WITH_SECONDS);
+            return current_date
+        },
+
         clickChat(index){
           this.active_chat = index
           return index
+        },
+
+        addMessage(index){
+        if(this.text != ''){
+            this.contacts[this.active_chat].messages.push({
+                date: this.getDate(),
+                message: this.text,
+                status: 'sent'
+            })
+        }    
+
+            setTimeout( () =>{
+                this.contacts[this.active_chat].messages.push({
+                    date: this.getDate(),
+                    message: 'Ok',
+                    status: 'received'
+                })
+            },1000)
+            
+            this.text = ''
         }
     }
 }).mount('#app')

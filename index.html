@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.3.0/luxon.min.js" integrity="sha512-KKbQg5o92MwtJKR9sfm/HkREzfyzNMiKPIQ7i7SZOxwEdiNCm4Svayn2DBq7MKEdrqPJUOSIpy1v6PpFlCQ0YA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -15,7 +16,7 @@
         <div id="app">
 
             <!-- START CONTAINER APP -->
-            <div class="container-fluid d-flex flex-row">
+            <div class="container d-flex flex-row">
                 <!-- SIDEBAR -->
                 <div class="row d-flex flex-column width-30 gx-0">
 
@@ -69,10 +70,13 @@
                     <!-- CONTACTS LIST -->
                     <div class="col gx-0 overflow">
                         <ul class="list-group list-group-flush border">
-                            <li class="list-group-item d-flex" v-for="(contact, index) in contacts" @click="clickChat(index)">
+                            <li class="list-group-item d-flex list" v-for="(contact, index) in contacts" @click="clickChat(index)">
                                 <img class="avatar" :src="contact.avatar" alt="avatar">
-                                <h5>{{ contact.name }}</h5>
-                                <pre>{{ contact.date }}</pre>
+                                <div class="user d-flex flex-column">
+                                    <h5>{{ contact.name }}</h5>
+                                    <p>Ultimo messaggio inviato</p>
+                                </div>
+                                <p class="date-chat">12:00</p>
                             </li>
                         </ul>
                     </div>
@@ -90,7 +94,10 @@
                             <li class="list-group-item d-flex flex-between p-0">
                                 <div class="d-flex flex-row avatar-img bg-grey">
                                     <img :src="contacts[active_chat].avatar" alt="Avatar">
-                                    <h5>{{ contacts[active_chat].name }}</h5>
+                                    <div class="user d-flex flex-column">
+                                        <h5>{{ contacts[active_chat].name }}</h5>
+                                        <p>Ultimo accesso alle ore 12:00</p>
+                                    </div>
                                 </div>
                                 <div class="d-flex flex-row justify-content-end bg-grey p-3">
                                     <button type="button" class="btn btn-link">
@@ -109,7 +116,7 @@
                     <!-- END CURRENT USER -->
 
                     <!-- CHAT -->
-                    <div class="col d-flex flex-column bg-image border overflow" v-for="(message, index) in contacts[active_chat].messages">
+                    <div class="col d-flex flex-column bg-image border" v-for="(message, index) in contacts[active_chat].messages">
                         <div v-if="message.status == 'sent'">
                             <div class="d-flex justify-content-end">
                                 <div class="send">
@@ -136,7 +143,7 @@
                             <button type="button" class="btn btn-link">
                                 <i class="fa-solid fa-face-smile fa-xl"></i>
                             </button>
-                            <input type="text" class="form-control" placeholder="Scrivi un messaggio" v-model="">
+                            <input type="text" class="form-control" placeholder="Scrivi un messaggio" v-model="text" @keyup.enter="addMessage(index)">
                             <button type="button" class="btn btn-link">
                                 <i class="fa-solid fa-microphone fa-xl"></i>
                             </button>
