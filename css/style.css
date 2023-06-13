@@ -78,6 +78,7 @@
 .bg-image{
     background-image: url(../img/mine.jpg);
     overflow-y: auto;
+    background: linear-gradient();
 }
 
 .border-none{
@@ -86,4 +87,22 @@
 
 i{
     color: grey;
+}
+
+.send{
+    width: 300px;
+    max-width: 300px;
+    padding: 15px 15px;
+    background-color: #d5f9ba;
+    border-radius: 10px;
+    margin: 25px;
+}
+
+.received{
+    background-color: white;
+    width: 300px;
+    max-width: 300px;
+    padding: 15px 15px;
+    border-radius: 10px;
+    margin: 25px;
 }
