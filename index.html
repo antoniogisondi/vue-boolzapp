@@ -90,8 +90,18 @@
                         </ul>
                     </div>
 
-                    <div class="col bg-image border ">
+                    <div class="col d-flex flex-column bg-image border">
+                        <div class="d-flex justify-content-end">
+                            <div class="send">
+                                <p>Grazie mille</p>
+                            </div>
+                        </div>
 
+                        <div class="d-flex justify-content-start">
+                            <div class="received">
+                                <p>OK</p>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="border my-3">
@@ -99,7 +109,7 @@
                             <button type="button" class="btn btn-link">
                                 <i class="fa-solid fa-face-smile fa-xl"></i>
                             </button>
-                            <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                            <input type="text" class="form-control" placeholder="Scrivi un messaggio" v-model="">
                             <button type="button" class="btn btn-link">
                                 <i class="fa-solid fa-microphone fa-xl"></i>
                             </button>
