@@ -177,7 +177,6 @@ createApp({
     methods:{
         clickChat(index){
           this.active_chat = index
-          console.log(index)
           return index
         }
     }

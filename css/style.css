@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+/* UTILITIES */
+
 .border{
     border-radius: none;
 }
@@ -117,5 +119,5 @@ i{
 }
 
 .text{
-    margin-bottom: 0;
+    margin-bottom: 5px;
 }

@@ -11,12 +11,17 @@
     <title>Boolzapp</title>
 </head>
     <body>
+        <!-- START CONTAINER FOR VUE.JS -->
         <div id="app">
+
+            <!-- START CONTAINER APP -->
             <div class="container-fluid d-flex flex-row">
+                <!-- SIDEBAR -->
                 <div class="row d-flex flex-column width-30 gx-0">
 
                     <div class="gx-0">
                         <ul class="list-group list-group-flush border">
+                            <!-- USER -->
                             <li class="list-group-item d-flex flex-between p-0">
                                 <div class="d-flex flex-row img bg-grey p-3">
                                     <img src="./img/avatar_io.jpg" alt="me">
@@ -34,7 +39,9 @@
                                     </button>
                                 </div>
                             </li>
+                            <!-- END USER -->
 
+                            <!-- NOTIFICATION -->
                             <li class="list-group-item d-flex p-0">
                                 <div class="d-flex flex-row  bg-blue p-3">
                                     <span class="bell"><i class="fa-solid fa-bell-slash fa-xl"></i></span>
@@ -44,7 +51,9 @@
                                     </div>
                                 </div>
                             </li>
+                            <!-- END NOTIFICATION -->
 
+                            <!-- SEARCH CONTACTS -->
                             <li class="list-group-item d-flex">
                                 <div class="input-group">
                                     <span class="input-group-text">
@@ -53,9 +62,11 @@
                                     <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
                                 </div>
                             </li>
+                            <!-- END SEARCH CONTACTS -->
                         </ul>
                     </div>
-
+                    
+                    <!-- CONTACTS LIST -->
                     <div class="col gx-0 overflow">
                         <ul class="list-group list-group-flush border">
                             <li class="list-group-item d-flex" v-for="(contact, index) in contacts" @click="clickChat(index)">
@@ -65,9 +76,15 @@
                             </li>
                         </ul>
                     </div>
+                    <!-- END CONTACTS LIST -->
+
                 </div>
-                
+                <!-- END SIDEBAR -->
+
+                <!-- MENU' -->
                 <div class="row d-flex flex-column width-70 gx-0">
+
+                    <!-- CURRENT USER -->
                     <div class="gx-0">
                         <ul class="list-group list-group-flush border">
                             <li class="list-group-item d-flex flex-between p-0">
@@ -89,7 +106,9 @@
                             </li>
                         </ul>
                     </div>
+                    <!-- END CURRENT USER -->
 
+                    <!-- CHAT -->
                     <div class="col d-flex flex-column bg-image border overflow" v-for="(message, index) in contacts[active_chat].messages">
                         <div v-if="message.status == 'sent'">
                             <div class="d-flex justify-content-end">
@@ -109,7 +128,9 @@
                             </div>
                         </div>
                     </div>
+                    <!-- END CHAT -->
 
+                    <!-- SEND MESSAGES -->
                     <div class="border my-3">
                         <div class="input-group">
                             <button type="button" class="btn btn-link">
@@ -121,8 +142,12 @@
                             </button>
                         </div>
                     </div>
+                    <!-- END SEND MESSAGES -->
                 </div>
+                <!-- END MENU' -->
             </div>
+            <!-- END CONTAINER APP -->
         </div>
+        <!-- END CONTAINER FOR VUE.JS -->
     </body>
 </html>
