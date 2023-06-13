@@ -13,7 +13,7 @@
     <body>
         <div id="app">
             <div class="container-fluid d-flex flex-row">
-                <div class="row d-flex flex-column width-30">
+                <div class="row d-flex flex-column width-30 gx-0">
 
                     <div class="gx-0">
                         <ul class="list-group list-group-flush border">
@@ -22,7 +22,7 @@
                                     <img src="./img/avatar_io.jpg" alt="me">
                                     <h5>Sofia</h5>
                                 </div>
-                                <div class="d-flex flex-row bg-grey p-3">
+                                <div class="d-flex flex-row justify-content-end bg-grey p-3">
                                     <button type="button" class="btn btn-link">
                                         <i class="fa-solid fa-circle-notch fa-lg"></i>
                                     </button>
@@ -57,8 +57,8 @@
                     </div>
 
                     <div class="col gx-0 overflow">
-                        <ul class="list-group list-group-flush border" v-for="(contact, index) in contacts">
-                            <li class="list-group-item d-flex">
+                        <ul class="list-group list-group-flush border">
+                            <li class="list-group-item d-flex" v-for="(contact, index) in contacts">
                                 <img class="avatar" :src="contact.avatar" alt="avatar">
                                 <h5>{{ contact.name }}</h5>
                                 <pre>{{ contact.date }}</pre>
@@ -66,16 +66,16 @@
                         </ul>
                     </div>
                 </div>
-
-                <div class="row d-flex flex-column width-70">
-                    <div class="gx-5">
+                
+                <div class="row d-flex flex-column width-70 gx-0">
+                    <div class="gx-0">
                         <ul class="list-group list-group-flush border">
                             <li class="list-group-item d-flex flex-between p-0">
                                 <div class="d-flex flex-row avatar-img bg-grey">
                                     <img src="./img/avatar_1.jpg" alt="Avatar">
                                     <h5>Michele</h5>
                                 </div>
-                                <div class="d-flex flex-row bg-grey p-3">
+                                <div class="d-flex flex-row justify-content-end bg-grey p-3">
                                     <button type="button" class="btn btn-link">
                                         <i class="fa-solid fa-magnifying-glass fa-lg"></i>
                                     </button>
@@ -90,15 +90,19 @@
                         </ul>
                     </div>
 
-                    <div class="col bg-image border">
+                    <div class="col bg-image border ">
 
                     </div>
 
-                    <div class="border">
-                        <div class="input-group my-3">
-                            <span><i class="fa-solid fa-face-smile fa-xl"></i></span>
-                            <input type="text" class="form-control mx-2" placeholder="Scrivi un messaggio">
-                            <span><i class="fa-solid fa-microphone fa-xl"></i></span>
+                    <div class="border my-3">
+                        <div class="input-group">
+                            <button type="button" class="btn btn-link">
+                                <i class="fa-solid fa-face-smile fa-xl"></i>
+                            </button>
+                            <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                            <button type="button" class="btn btn-link">
+                                <i class="fa-solid fa-microphone fa-xl"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
