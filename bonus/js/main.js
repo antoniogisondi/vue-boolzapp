@@ -182,10 +182,11 @@ createApp({
             this.contacts.forEach((contact) => {
                 let user_name = contact.name.toLowerCase()
                 contact.visible = user_name.includes(search_chat)
+                console.log(contact.visible)
             });
-            console.log(contact.visible)
         },
         
+
         getDate(){
             let date = luxon.DateTime;
             let current_date = date.now().setLocale('it').toLocaleString(date.DATETIME_SHORT_WITH_SECONDS);
@@ -204,16 +205,16 @@ createApp({
                 message: this.text,
                 status: 'sent'
             })
-        }    
 
             setTimeout( () =>{
-               
+                   
                 this.contacts[this.active_chat].messages.push({
                     date: this.getDate(),
                     message: 'Ok',
                     status: 'received'
                 })
             },1000)
+        }    
             
             this.text = ''
         },
