@@ -181,7 +181,13 @@ createApp({
             let search_chat = this.search.toLowerCase()
             this.contacts.forEach((contact) => {
                 let user_name = contact.name.toLowerCase()
-                contact.visible = user_name.includes(search_chat)
+                if(contact.name.toLowerCase().includes(search_chat)){
+                    contact.visible = true
+                }
+                else{
+                    contact.visible = false
+                }
+                // contact.visible = user_name.includes(search_chat)
                 console.log(contact.visible)
             });
         },
