@@ -60,7 +60,7 @@
                                     <span class="input-group-text">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="search_chat" @input="searchChat()">
+                                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="search" @input="searchChat()">
                                 </div>
                             </li>
                             <!-- END SEARCH CONTACTS -->
@@ -70,13 +70,15 @@
                     <!-- CONTACTS LIST -->
                     <div class="col gx-0 overflow">
                         <ul class="list-group list-group-flush border">
-                            <li class="list-group-item d-flex list" v-for="(contact, index) in contacts" @click="clickChat(index)">
-                                <img class="avatar" :src="contact.avatar" alt="avatar">
-                                <div class="user d-flex flex-column">
-                                    <h5>{{ contact.name }}</h5>
-                                    <p>Ultimo messaggio inviato</p>
+                            <li class="list" v-for="(contact, index) in contacts" @click="clickChat(index)" :class="contact.visible ? 'block' : 'none'">
+                                <div class="d-flex">
+                                    <img class="avatar" :src="contact.avatar" alt="avatar">
+                                    <div class="user d-flex flex-column">
+                                        <h5>{{ contact.name }}</h5>
+                                        <p>Ultimo messaggio inviato</p>
+                                    </div>
+                                    <p class="date-chat">12:00</p>
                                 </div>
-                                <p class="date-chat">12:00</p>
                             </li>
                         </ul>
                     </div>
