@@ -5,9 +5,13 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
+            // VARIABILI UTILIZZATE NEI METHODS NELLE FUNZIONI
             active_chat: 0,
             text:'',
             search: '',
+            // END 
+
+            // OBJECT ARRAY PER I CONTATTI DELLA CHAT
             contacts: [
                 {
                     name: 'Michele',
@@ -177,6 +181,7 @@ createApp({
     },
 
     methods:{
+        // FUNZIONE CHE FILTRA LE CHAT IN BASE AI CARATTERI CHE DIGITI
         searchChat(){
             let search_chat = this.search.toLowerCase()
             this.contacts.forEach((contact) => {
@@ -188,17 +193,20 @@ createApp({
             
         },
         
+        // FUNZIONE CHE TI MOSTRA LA DATA IN TEMPO REALE
         getDate(){
             let date = luxon.DateTime;
             let current_date = date.now().setLocale('it').toLocaleString(date.DATETIME_SHORT_WITH_SECONDS);
             return current_date
         },
 
+        // FUNZIONE CHE TI MOSTRA LA CHAT NEL MENU CHAT CLICCANDO SUI CONTATTI
         clickChat(index){
           this.active_chat = index
           return index
         },
 
+        // FUNZIONE CHE TI AGGIUNGE IL MESSAGGIO CHE SCRIVI E MANDA UN MESSAGGIO OK DOPO UN SECONDO
         addMessage(index){
         if(this.text != ''){
             this.contacts[this.active_chat].messages.push({

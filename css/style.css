@@ -6,6 +6,7 @@
 
 body{
     background: linear-gradient(180deg, #009688 15%, #D9DBD4 15%);
+    font-family: 'Lato', sans-serif;
 }
 
 /* UTILITIES */
